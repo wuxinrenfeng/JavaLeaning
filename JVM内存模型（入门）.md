@@ -82,6 +82,3 @@ java8中已经没有方法区了，取而代之的是元空间（**Metaspace**�
 **直接内存（Direct Memory）并不是虚拟机运行时数据区的一部分，也不是Java虚拟机规范中定义的内存区域**，但是这部分内存也被频繁地使用，而且也可能导致**OutOfMemoryError**异常出现。
 
  JDK1.4加的NIO中，ByteBuffer有个方法是**allocateDirect(int capacity)** ，这是一种基于通道（**Channel**）与缓冲区（**Buffer**）的I/O方式，它可以使用Native函数库直接分配堆外内存，然后通过一个存储在Java堆里面的DirectByteBuffer对象作为这块内存的引用进行操作。这样能在一些场景中显著提高性能，因为避免了在Java堆和Native堆中来回复制数据。
-
-
-本文链接：https://www.jianshu.com/p/a60d6ef0771b
